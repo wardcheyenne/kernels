@@ -5,7 +5,8 @@ feature_map = [lambda x: x**2, lambda x: x, lambda x: 1]
 data_space = [np.random.randint(1, 20) for _ in range(5)]
 weights = [1, -1, 1]
 
-function_space = [ #Also known as the RKHS
+#The function space defines a unique function in the RKHS. 
+function_space = [
     lambda x, f=f, c=c: c * f(x) 
     for f, c in zip(feature_map, weights)
 ]
